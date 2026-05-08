@@ -92,6 +92,33 @@
   .pillar-card[data-pillar="strategic"]  .pillar-label { color: var(--accent-strategic); }
   .pillar-card[data-pillar="technical"]  .pillar-label { color: var(--accent-technical); }
 
+  .pillar-sub {
+    font-size: 0.76rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    max-width: 400px;
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid;
+    border-radius: 0 6px 6px 0;
+  }
+  .pillar-sub::before {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    opacity: 0.6;
+    content: '5 / 5 looks like';
+  }
+  .pillar-card[data-pillar="commercial"] .pillar-sub { border-color: var(--accent-commercial); }
+  .pillar-card[data-pillar="organised"]  .pillar-sub { border-color: var(--accent-organised); }
+  .pillar-card[data-pillar="strategic"]  .pillar-sub { border-color: var(--accent-strategic); }
+  .pillar-card[data-pillar="technical"]  .pillar-sub { border-color: var(--accent-technical); }
+
   .pillar-avg {
     font-size: 0.72rem;
     color: var(--muted);
@@ -308,6 +335,7 @@ const MAX = 5;
 const PILLARS = [
   {
     id: 'commercial', label: 'Commercial', color: '#f5a623',
+    sub: 'A trusted commercial partner who speaks the language of the business, wins on quality not volume, and consistently turns market knowledge into hiring advantage. Hiring managers don\'t brief them — they brief hiring managers.',
     axes: [
       { label: 'Market Understanding & Business Acumen', good: [
         'Speaks the language of the business — headcount impact, cost-per-hire, time-to-productivity — not just fill rates',
@@ -338,6 +366,7 @@ const PILLARS = [
   },
   {
     id: 'organised', label: 'Organised', color: '#4ecdc4',
+    sub: 'A process machine — every role runs like a project, every stage is owned, and every bottleneck is pre-empted before it costs time or quality. The funnel is always visible, always moving, and always improving.',
     axes: [
       { label: 'Project Management & Delivery', good: [
         'Runs multiple complex roles simultaneously without dropping quality or pace on any of them',
@@ -368,6 +397,7 @@ const PILLARS = [
   },
   {
     id: 'strategic', label: 'Strategic', color: '#e040fb',
+    sub: 'Operates like a talent strategist, not a vacancy filler. Connects every hire to org design, anticipates risks before they land, and earns a seat at the table by being right more often than the business expects.',
     axes: [
       { label: 'Ethical Practice & Communication', good: [
         'Every candidate gets a clear, honest process — no ghosting, no false urgency, no misleading role sells',
@@ -398,6 +428,7 @@ const PILLARS = [
   },
   {
     id: 'technical', label: 'Technical', color: '#69f0ae',
+    sub: 'Data and tooling are genuinely embedded in how they work — not bolted on. Uses AI, automation, and funnel analytics to make better decisions faster, and can talk credibly with any function they recruit for.',
     axes: [
       { label: 'Data Informed Decision-Making', good: [
         'Decisions are backed by funnel data, not gut feel or raw activity metrics',
@@ -738,6 +769,7 @@ PILLARS.forEach(p => {
 
   card.innerHTML = `
     <div class="pillar-label">${p.label}</div>
+    <div class="pillar-sub">${p.sub}</div>
     <div class="pillar-avg" id="avg-${p.id}">Average: <span>3.0 / ${MAX}</span></div>
     <canvas id="canvas-${p.id}" class="radar" width="420" height="340"></canvas>
     <div class="scores-list" id="list-${p.id}">
