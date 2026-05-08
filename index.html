@@ -29,11 +29,7 @@
     padding: 48px 32px;
   }
 
-  header {
-    text-align: center;
-    margin-bottom: 56px;
-  }
-
+  header { text-align: center; margin-bottom: 48px; }
   header h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.8rem, 6vw, 5rem);
@@ -41,179 +37,12 @@
     line-height: 1;
     color: var(--text);
   }
-
   header p {
     margin-top: 10px;
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 300;
     letter-spacing: 0.05em;
-  }
-
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 32px;
-    max-width: 1400px;
-    margin: 0 auto 56px;
-  }
-
-  .pillar-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px 24px 24px;
-    position: relative;
-    overflow: visible;
-  }
-
-  .pillar-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    border-radius: 16px 16px 0 0;
-  }
-
-  .pillar-card[data-pillar="commercial"]::before { background: var(--accent-commercial); }
-  .pillar-card[data-pillar="organised"]::before  { background: var(--accent-organised); }
-  .pillar-card[data-pillar="strategic"]::before  { background: var(--accent-strategic); }
-  .pillar-card[data-pillar="technical"]::before  { background: var(--accent-technical); }
-
-  .pillar-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.12em;
-    margin-bottom: 4px;
-  }
-
-  .pillar-card[data-pillar="commercial"] .pillar-label { color: var(--accent-commercial); }
-  .pillar-card[data-pillar="organised"]  .pillar-label { color: var(--accent-organised); }
-  .pillar-card[data-pillar="strategic"]  .pillar-label { color: var(--accent-strategic); }
-  .pillar-card[data-pillar="technical"]  .pillar-label { color: var(--accent-technical); }
-
-  .pillar-avg {
-    font-size: 0.75rem;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    margin-bottom: 20px;
-  }
-
-  .pillar-avg span {
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  canvas.radar {
-    display: block;
-    margin: 0 auto;
-    cursor: crosshair;
-  }
-
-  .scores-list {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .score-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.78rem;
-  }
-
-  .score-item .label {
-    flex: 1;
-    color: var(--muted);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .score-item .bar-wrap {
-    width: 90px;
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .score-item .bar-fill {
-    height: 100%;
-    border-radius: 2px;
-    transition: width 0.2s ease;
-  }
-
-  .score-item .val {
-    width: 24px;
-    text-align: right;
-    font-weight: 500;
-    font-size: 0.82rem;
-  }
-
-  /* Overall section */
-  .overall-section {
-    max-width: 560px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .overall-section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    color: var(--accent-overall);
-    margin-bottom: 4px;
-  }
-
-  .overall-section p {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-bottom: 24px;
-    letter-spacing: 0.04em;
-  }
-
-  .overall-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px 24px 28px;
-    position: relative;
-  }
-
-  .overall-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    border-radius: 16px 16px 0 0;
-    background: var(--accent-overall);
-  }
-
-  .overall-scores {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-
-  .overall-score-item {
-    text-align: center;
-  }
-
-  .overall-score-item .name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 2px;
-  }
-
-  .overall-score-item .num {
-    font-size: 1.6rem;
-    font-weight: 300;
   }
 
   .hint {
@@ -223,18 +52,246 @@
     margin-bottom: 32px;
     letter-spacing: 0.04em;
   }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto 52px;
+  }
+
+  .pillar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px 20px;
+    position: relative;
+  }
+
+  .pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+  }
+  .pillar-card[data-pillar="commercial"]::before { background: var(--accent-commercial); }
+  .pillar-card[data-pillar="organised"]::before  { background: var(--accent-organised); }
+  .pillar-card[data-pillar="strategic"]::before  { background: var(--accent-strategic); }
+  .pillar-card[data-pillar="technical"]::before  { background: var(--accent-technical); }
+
+  .pillar-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 2px;
+  }
+  .pillar-card[data-pillar="commercial"] .pillar-label { color: var(--accent-commercial); }
+  .pillar-card[data-pillar="organised"]  .pillar-label { color: var(--accent-organised); }
+  .pillar-card[data-pillar="strategic"]  .pillar-label { color: var(--accent-strategic); }
+  .pillar-card[data-pillar="technical"]  .pillar-label { color: var(--accent-technical); }
+
+  .pillar-avg {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .pillar-avg span { font-weight: 500; color: var(--text); }
+
+  canvas.radar {
+    display: block;
+    margin: 0 auto;
+    cursor: crosshair;
+    max-width: 100%;
+  }
+
+  .scores-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .score-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.76rem;
+  }
+
+  .label-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    position: relative;
+  }
+
+  .score-item .label {
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1;
+  }
+
+  /* Info button */
+  .info-btn {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid #454860;
+    color: #454860;
+    font-size: 9px;
+    font-weight: 700;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    user-select: none;
+    font-family: Georgia, serif;
+  }
+  .info-btn:hover,
+  .info-btn.active {
+    border-color: var(--text);
+    color: var(--text);
+    background: #252830;
+  }
+
+  /* Tooltip popup — absolutely positioned, rendered via JS into body */
+  .tooltip-popup {
+    position: fixed;
+    width: 300px;
+    background: #1a1d28;
+    border: 1px solid #353a52;
+    border-radius: 12px;
+    padding: 14px 16px;
+    z-index: 9999;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+    animation: fadeIn 0.12s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .tooltip-popup .tt-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .tooltip-popup .tt-intro {
+    font-size: 0.72rem;
+    color: #6b7080;
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+  }
+
+  .tooltip-popup .tt-item {
+    display: flex;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #9aa0b4;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .tooltip-popup .tt-item:last-child { margin-bottom: 0; }
+
+  .tooltip-popup .tt-tick {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    margin-top: 2px;
+    font-weight: 700;
+  }
+
+  /* Score dots */
+  .score-item .dots {
+    display: flex;
+    gap: 4px;
+  }
+  .score-item .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    transition: background 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+  }
+  .score-item .val {
+    width: 18px;
+    text-align: right;
+    font-weight: 500;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  /* Overall */
+  .overall-section { max-width: 560px; margin: 0 auto; text-align: center; }
+  .overall-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-overall);
+    margin-bottom: 4px;
+  }
+  .overall-section > p {
+    font-size: 0.78rem; color: var(--muted); margin-bottom: 20px; letter-spacing: 0.04em;
+  }
+  .overall-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 24px 24px; position: relative;
+  }
+  .overall-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; border-radius: 16px 16px 0 0; background: var(--accent-overall);
+  }
+  .overall-scores {
+    display: flex; justify-content: center; align-items: center;
+    gap: 28px; margin-top: 20px; flex-wrap: wrap;
+  }
+  .overall-score-item { text-align: center; }
+  .overall-score-item .name {
+    font-family: 'Bebas Neue', sans-serif; font-size: 0.82rem;
+    letter-spacing: 0.1em; margin-bottom: 2px;
+  }
+  .overall-score-item .num { font-size: 1.5rem; font-weight: 300; }
+  .divider {
+    max-width: 1100px; margin: 0 auto 40px;
+    border: none; border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 700px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
 <header>
   <h1>Talent Capability Radar</h1>
-  <p>DRAG THE DOTS ON EACH AXIS TO SET SCORES · 1–10</p>
+  <p>DRAG THE DOTS ON EACH AXIS TO SET SCORES · 1–5</p>
 </header>
 
-<p class="hint">Click or drag along each axis to score. Scores update in real time.</p>
+<p class="hint">Click or drag along each axis to score &nbsp;·&nbsp; click <strong style="color:var(--text);font-style:italic">i</strong> on any row to see what good looks like</p>
 
 <div class="pillars-grid" id="pillarsGrid"></div>
+
+<hr class="divider">
 
 <div class="overall-section">
   <h2>Overall Score</h2>
@@ -246,403 +303,470 @@
 </div>
 
 <script>
+const MAX = 5;
+
 const PILLARS = [
   {
-    id: 'commercial',
-    label: 'Commercial',
-    color: '#f5a623',
+    id: 'commercial', label: 'Commercial', color: '#f5a623',
     axes: [
-      'Market Understanding & Business Acumen',
-      'Interviewing Techniques & Selling',
-      'Consultative Partnering (Customer First)',
-      'Accountability, Trust & Adaptability',
-      'EQ/CQ, Curiosity & Visibility'
+      { label: 'Market Understanding & Business Acumen', good: [
+        'Speaks the language of the business — headcount impact, cost-per-hire, time-to-productivity — not just fill rates',
+        'Uses competitor hiring intel to advise on positioning and offer strategy before being asked',
+        'Challenges briefs with market data: "That salary won\'t get you this profile — here\'s what will"'
+      ]},
+      { label: 'Interviewing Techniques & Selling', good: [
+        'Runs structured, competency-based screens that predict quality — not vibes-based culture chats',
+        'Sells the role with specificity: growth path, team context, real impact — not generic employer brand lines',
+        'Screen-to-offer conversion is consistently above benchmark; knows exactly where drop-off happens'
+      ]},
+      { label: 'Consultative Partnering (Customer First)', good: [
+        'Pushes back on unrealistic briefs with data — reframes the ask rather than just executing it',
+        'HMs and CAs treat them as a strategic partner, not a CV-delivery service',
+        'Proactively shares market intelligence and pipeline health before being asked'
+      ]},
+      { label: 'Accountability, Trust & Adaptability', good: [
+        'Owns outcomes, not just activity — tracks quality of hire and conversion, not just placements made',
+        'Adapts the approach when a strategy isn\'t working, without waiting to be told',
+        'No dropped balls, no surprises — earns trust through follow-through every time'
+      ]},
+      { label: 'EQ/CQ, Curiosity & Visibility', good: [
+        'Reads the room with candidates and stakeholders — adapts tone, pace, and message instinctively',
+        'Asks "why" before "how" — genuinely curious about what drives someone\'s next move',
+        'Builds a visible presence in their talent community — known and respected, not just active'
+      ]}
     ]
   },
   {
-    id: 'organised',
-    label: 'Organised',
-    color: '#4ecdc4',
+    id: 'organised', label: 'Organised', color: '#4ecdc4',
     axes: [
-      'Project Management & Delivery',
-      'Owning the Hiring Process',
-      'Driving SLAs, Outcomes & Efficiency',
-      'Preparation & Resource Planning',
-      'Structured Time Management'
+      { label: 'Project Management & Delivery', good: [
+        'Runs multiple complex roles simultaneously without dropping quality or pace on any of them',
+        'Uses clear project structures — kick-offs, milestones, retrospectives — not just reactive task lists',
+        'Delivery is predictable: hiring managers always know where things stand without having to chase'
+      ]},
+      { label: 'Owning the Hiring Process', good: [
+        'Drives the process end-to-end — never waits for the HM to push things forward',
+        'Reduces time-in-stage by pre-empting bottlenecks: slow feedback, calendar clashes, approval delays',
+        'Treats every stage as a conversion opportunity, not just a box to tick'
+      ]},
+      { label: 'Driving SLAs, Outcomes & Efficiency', good: [
+        'Knows their funnel metrics cold — time to shortlist, screen-to-offer ratio, offer acceptance rate',
+        'Identifies where conversion is leaking and fixes it proactively, not after a review',
+        'Quality over volume: fewer, better candidates rather than flooding the process'
+      ]},
+      { label: 'Preparation & Resource Planning', good: [
+        'Fully briefed before every role opens — comp range, must-haves vs. nice-to-haves, team context, why now',
+        'Anticipates pipeline needs before they become urgent — no panic sourcing, no reactive scrambles',
+        'Prepares interviewers with scorecards and calibration, not just a CV and a calendar invite'
+      ]},
+      { label: 'Structured Time Management', good: [
+        'Protects deep-work time for sourcing — doesn\'t let admin crowd out the highest-value activity',
+        'Sequences the day around candidate availability and HM responsiveness windows',
+        'Uses time-blocking and weekly pipeline reviews to stay ahead of the funnel, not behind it'
+      ]}
     ]
   },
   {
-    id: 'strategic',
-    label: 'Strategic',
-    color: '#e040fb',
+    id: 'strategic', label: 'Strategic', color: '#e040fb',
     axes: [
-      'Ethical Practice & Communication',
-      'Bigger Picture Thinking',
-      'Prioritisation & Decision-Making',
-      'Knowledge Sharing',
-      'Benchmarking & Market Awareness'
+      { label: 'Ethical Practice & Communication', good: [
+        'Every candidate gets a clear, honest process — no ghosting, no false urgency, no misleading role sells',
+        'Calls out bias in hiring panels with data and confidence, not just a feeling',
+        'Communicates hard tradeoffs clearly to senior stakeholders — no sugar-coating, no people-pleasing'
+      ]},
+      { label: 'Bigger Picture Thinking', good: [
+        'Sees beyond the open role — asks how this hire fits the 12-month org design, not just today\'s gap',
+        'Connects talent strategy to business growth phases: what does the team need to look like in 18 months?',
+        'Flags risks in hiring plans before they become problems — proactive, not reactive'
+      ]},
+      { label: 'Prioritisation & Decision-Making', good: [
+        'Ranks roles by business impact, not loudest hiring manager — and holds that position with data',
+        'Makes fast, well-reasoned decisions on candidate progression without needing group consensus',
+        'Knows when to stop investing in a stalled search and reset the brief rather than persist with a broken process'
+      ]},
+      { label: 'Knowledge Sharing', good: [
+        'Actively debriefs on what worked and what didn\'t — builds institutional learning, not tribal knowledge',
+        'Shares market intel, salary data, and competitor moves across the team without being prompted',
+        'Elevates the people around them — rising tide mentality, not a solo performance island'
+      ]},
+      { label: 'Benchmarking & Market Awareness', good: [
+        'Has a clear view of what top-quartile talent looks like in each function they recruit for',
+        'Uses external benchmarks — comp, time-to-hire, quality of hire — to challenge internal assumptions',
+        'Regularly maps the talent landscape: knows who\'s hireable, who\'s watching, and who\'s ready to move'
+      ]}
     ]
   },
   {
-    id: 'technical',
-    label: 'Technical',
-    color: '#69f0ae',
+    id: 'technical', label: 'Technical', color: '#69f0ae',
     axes: [
-      'Data Informed Decision-Making',
-      'Tooling Capability & Sourcing',
-      'Prompting & AI/Automation Skills',
-      'Understanding Industry Trends',
-      'Meta Language & Technical Fluency'
+      { label: 'Data Informed Decision-Making', good: [
+        'Decisions are backed by funnel data, not gut feel or raw activity metrics',
+        'Tracks leading indicators — pipeline health, interview-to-offer ratios — not just lagging ones like hires made',
+        '"Our last 3 hires from this channel didn\'t convert — here\'s the data and here\'s what I\'m changing"'
+      ]},
+      { label: 'Tooling Capability & Sourcing', good: [
+        'Extracts far more signal from ATS, LinkedIn, and sourcing tools than the average user',
+        'Builds and maintains warm talent pools — not just archived contacts gathering dust',
+        'Knows which sourcing channel converts best for each role type and adjusts spend and effort accordingly'
+      ]},
+      { label: 'Prompting & AI/Automation Skills', good: [
+        'Uses AI to accelerate high-quality output — briefs, outreach, screening notes — without replacing the thinking',
+        'Writes prompts that produce consistent, on-brand, role-specific content with minimal editing needed',
+        'Automates repeatable tasks — follow-ups, scheduling, status updates — so time shifts to high-value work'
+      ]},
+      { label: 'Understanding Industry Trends', good: [
+        'Knows which skills are emerging and which are commoditising — adjusts sourcing criteria before HMs notice the shift',
+        'Follows TA innovation closely: new assessment tools, sourcing methods, hiring models, market shifts',
+        'Advises hiring managers on talent availability changes before they affect headcount plans'
+      ]},
+      { label: 'Meta Language & Technical Fluency', good: [
+        'Can hold a credible conversation with engineers, finance, or ops about their domain — not just HR-speak',
+        'Understands enough about the roles they recruit for to assess candidate quality without relying entirely on HM feedback',
+        'Bridges the gap between hiring manager technical language and compelling, accessible candidate-facing messaging'
+      ]}
     ]
   }
 ];
 
-const pillarScores = {}; // id -> [s1..s5]
-PILLARS.forEach(p => { pillarScores[p.id] = [5, 5, 5, 5, 5]; });
+const pillarScores = {};
+PILLARS.forEach(p => { pillarScores[p.id] = [3, 3, 3, 3, 3]; });
+
+/* ---- Tooltip logic ---- */
+let activeTooltip = null;
+
+function closeTooltip() {
+  if (activeTooltip) {
+    activeTooltip.el.remove();
+    activeTooltip.btn.classList.remove('active');
+    activeTooltip = null;
+  }
+}
+
+function openTooltip(btn, axis, color) {
+  // Close any open tooltip first
+  if (activeTooltip) {
+    const wasThisBtn = activeTooltip.btn === btn;
+    closeTooltip();
+    if (wasThisBtn) return; // toggle off
+  }
+
+  const popup = document.createElement('div');
+  popup.className = 'tooltip-popup';
+  popup.innerHTML = `
+    <div class="tt-title" style="color:${color}">${axis.label}</div>
+    <div class="tt-intro">What good looks like</div>
+    ${axis.good.map(g => `
+      <div class="tt-item">
+        <span class="tt-tick" style="color:${color}">✓</span>
+        <span>${g}</span>
+      </div>
+    `).join('')}
+  `;
+  document.body.appendChild(popup);
+
+  // Use fixed positioning — coordinates are viewport-relative, no scroll offset needed
+  const rect = btn.getBoundingClientRect();
+  const popW = 300;
+  // Measure height after inserting into DOM
+  popup.style.visibility = 'hidden';
+  popup.style.left = '0px';
+  popup.style.top = '0px';
+  const popH = popup.offsetHeight;
+  popup.style.visibility = '';
+
+  let left = rect.left;
+  let top = rect.top - popH - 8;
+
+  // Prevent right overflow
+  if (left + popW > window.innerWidth - 16) {
+    left = window.innerWidth - popW - 16;
+  }
+  // Prevent left overflow
+  if (left < 8) left = 8;
+  // If would go above viewport, show below the button instead
+  if (top < 8) {
+    top = rect.bottom + 8;
+  }
+
+  popup.style.left = left + 'px';
+  popup.style.top = top + 'px';
+
+  btn.classList.add('active');
+  activeTooltip = { el: popup, btn };
+}
+
+// Close tooltip when clicking outside
+document.addEventListener('click', e => {
+  if (activeTooltip && !activeTooltip.btn.contains(e.target) && !activeTooltip.el.contains(e.target)) {
+    closeTooltip();
+  }
+});
 
 /* ---- Radar Math ---- */
 function radarPoints(scores, cx, cy, maxR, n) {
   return scores.map((s, i) => {
     const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
-    const r = (s / 10) * maxR;
-    return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle), angle, r: (s/10)*maxR, maxR };
+    const r = (s / MAX) * maxR;
+    return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
   });
 }
 
-function axisPoint(i, n, cx, cy, maxR) {
+function axisPoint(i, n, cx, cy, r) {
   const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
-  return { x: cx + maxR * Math.cos(angle), y: cy + maxR * Math.sin(angle), angle };
+  return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
 }
 
-function drawRadar(canvas, scores, color, labels, size) {
+function drawRadar(canvas, scores, color, labels, maxR) {
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
   const cx = W / 2, cy = H / 2;
   const n = scores.length;
-  const maxR = size || Math.min(W, H) * 0.35;
 
   ctx.clearRect(0, 0, W, H);
 
-  // Grid rings
-  [0.2, 0.4, 0.6, 0.8, 1.0].forEach(f => {
+  for (let ring = 1; ring <= MAX; ring++) {
+    const f = ring / MAX;
     ctx.beginPath();
     for (let i = 0; i < n; i++) {
       const a = (Math.PI * 2 * i / n) - Math.PI / 2;
-      const x = cx + f * maxR * Math.cos(a);
-      const y = cy + f * maxR * Math.sin(a);
-      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      i === 0 ? ctx.moveTo(cx + f*maxR*Math.cos(a), cy + f*maxR*Math.sin(a))
+              : ctx.lineTo(cx + f*maxR*Math.cos(a), cy + f*maxR*Math.sin(a));
     }
     ctx.closePath();
-    ctx.strokeStyle = f === 1.0 ? '#30333d' : '#1e2028';
-    ctx.lineWidth = f === 1.0 ? 1.2 : 0.8;
-    ctx.stroke();
-  });
-
-  // Ring labels (2,4,6,8,10)
-  [2,4,6,8,10].forEach((v,fi) => {
-    const f = (fi+1)*0.2;
-    const a = -Math.PI/2;
-    const x = cx + f * maxR * Math.cos(a) + 4;
-    const y = cy + f * maxR * Math.sin(a);
-    ctx.fillStyle = '#3a3d4a';
-    ctx.font = '10px DM Sans';
-    ctx.fillText(v, x, y);
-  });
-
-  // Axis lines
-  for (let i = 0; i < n; i++) {
-    const ap = axisPoint(i, n, cx, cy, maxR);
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.lineTo(ap.x, ap.y);
-    ctx.strokeStyle = '#2a2d36';
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = ring === MAX ? '#30333d' : '#1e2028';
+    ctx.lineWidth = ring === MAX ? 1.2 : 0.7;
     ctx.stroke();
   }
 
-  // Filled polygon
+  for (let ring = 1; ring <= MAX; ring++) {
+    const f = ring / MAX;
+    ctx.fillStyle = '#3a3d4a'; ctx.font = '9px DM Sans';
+    ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+    ctx.fillText(ring, cx + 4, cy - f * maxR);
+  }
+
+  for (let i = 0; i < n; i++) {
+    const ap = axisPoint(i, n, cx, cy, maxR);
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ap.x, ap.y);
+    ctx.strokeStyle = '#2a2d36'; ctx.lineWidth = 1; ctx.stroke();
+  }
+
   const pts = radarPoints(scores, cx, cy, maxR, n);
   ctx.beginPath();
   pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
   ctx.closePath();
-  ctx.fillStyle = color + '28';
-  ctx.fill();
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 2;
-  ctx.stroke();
+  ctx.fillStyle = color + '28'; ctx.fill();
+  ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
 
-  // Dots
   pts.forEach(p => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
-    ctx.fillStyle = color;
-    ctx.fill();
-    ctx.strokeStyle = '#0e0f14';
-    ctx.lineWidth = 2;
-    ctx.stroke();
+    ctx.beginPath(); ctx.arc(p.x, p.y, 6, 0, Math.PI*2);
+    ctx.fillStyle = color; ctx.fill();
+    ctx.strokeStyle = '#0e0f14'; ctx.lineWidth = 2; ctx.stroke();
   });
 
-  // Axis labels
-  const labelPad = 22;
+  const labelPad = 20;
   for (let i = 0; i < n; i++) {
     const ap = axisPoint(i, n, cx, cy, maxR + labelPad);
-    const raw = labels[i];
-    const words = raw.split(' ');
-    // wrap into 2 lines max
-    const lines = [];
-    let line = '';
+    const words = labels[i].split(' ');
+    const lines = []; let line = '';
     words.forEach(w => {
-      if ((line + ' ' + w).trim().length > 18) { lines.push(line.trim()); line = w; }
+      if ((line + ' ' + w).trim().length > 16) { lines.push(line.trim()); line = w; }
       else line = (line + ' ' + w).trim();
     });
     if (line) lines.push(line);
-
-    ctx.fillStyle = '#8a8f9e';
-    ctx.font = '500 10px DM Sans';
+    ctx.fillStyle = '#8a8f9e'; ctx.font = '500 9.5px DM Sans';
     ctx.textAlign = ap.x < cx - 5 ? 'right' : ap.x > cx + 5 ? 'left' : 'center';
     ctx.textBaseline = ap.y < cy - 5 ? 'bottom' : ap.y > cy + 5 ? 'top' : 'middle';
-    lines.forEach((l, li) => {
-      const lh = 13;
-      const yOff = (li - (lines.length - 1) / 2) * lh;
-      ctx.fillText(l, ap.x, ap.y + yOff);
-    });
+    lines.forEach((l, li) => ctx.fillText(l, ap.x, ap.y + (li - (lines.length-1)/2)*12));
   }
 }
 
 function drawOverallRadar(canvas, pillarAvgs, colors, labels) {
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
-  const cx = W / 2, cy = H / 2 - 10;
+  const cx = W/2, cy = H/2 - 10;
   const n = pillarAvgs.length;
   const maxR = Math.min(W, H) * 0.33;
 
   ctx.clearRect(0, 0, W, H);
 
-  // Grid rings
-  [0.2, 0.4, 0.6, 0.8, 1.0].forEach(f => {
+  for (let ring = 1; ring <= MAX; ring++) {
+    const f = ring / MAX;
     ctx.beginPath();
     for (let i = 0; i < n; i++) {
-      const a = (Math.PI * 2 * i / n) - Math.PI / 2;
-      ctx.lineTo(cx + f * maxR * Math.cos(a), cy + f * maxR * Math.sin(a));
+      const a = (Math.PI*2*i/n) - Math.PI/2;
+      ctx.lineTo(cx + f*maxR*Math.cos(a), cy + f*maxR*Math.sin(a));
     }
     ctx.closePath();
-    ctx.strokeStyle = f === 1.0 ? '#30333d' : '#1e2028';
-    ctx.lineWidth = f === 1.0 ? 1.2 : 0.8;
-    ctx.stroke();
-  });
-
-  // Ring numbers
-  [2,4,6,8,10].forEach((v,fi) => {
-    const f = (fi+1)*0.2;
-    ctx.fillStyle = '#3a3d4a';
-    ctx.font = '10px DM Sans';
-    ctx.fillText(v, cx + 4, cy + f * maxR * Math.sin(-Math.PI/2));
-  });
-
-  // Axis lines
-  for (let i = 0; i < n; i++) {
-    const a = (Math.PI * 2 * i / n) - Math.PI / 2;
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.lineTo(cx + maxR * Math.cos(a), cy + maxR * Math.sin(a));
-    ctx.strokeStyle = '#2a2d36';
-    ctx.lineWidth = 1;
-    ctx.stroke();
+    ctx.strokeStyle = ring === MAX ? '#30333d' : '#1e2028';
+    ctx.lineWidth = ring === MAX ? 1.2 : 0.7; ctx.stroke();
   }
 
-  // Filled shape
+  for (let ring = 1; ring <= MAX; ring++) {
+    const f = ring/MAX;
+    ctx.fillStyle='#3a3d4a'; ctx.font='9px DM Sans';
+    ctx.textAlign='left'; ctx.textBaseline='middle';
+    ctx.fillText(ring, cx+4, cy - f*maxR);
+  }
+
+  for (let i = 0; i < n; i++) {
+    const a = (Math.PI*2*i/n) - Math.PI/2;
+    ctx.beginPath(); ctx.moveTo(cx,cy);
+    ctx.lineTo(cx+maxR*Math.cos(a), cy+maxR*Math.sin(a));
+    ctx.strokeStyle='#2a2d36'; ctx.lineWidth=1; ctx.stroke();
+  }
+
   const pts = radarPoints(pillarAvgs, cx, cy, maxR, n);
   ctx.beginPath();
-  pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+  pts.forEach((p,i) => i===0 ? ctx.moveTo(p.x,p.y) : ctx.lineTo(p.x,p.y));
   ctx.closePath();
-  ctx.fillStyle = '#ff6b6b28';
-  ctx.fill();
-  ctx.strokeStyle = '#ff6b6b';
-  ctx.lineWidth = 2.5;
-  ctx.stroke();
+  ctx.fillStyle='#ff6b6b28'; ctx.fill();
+  ctx.strokeStyle='#ff6b6b'; ctx.lineWidth=2.5; ctx.stroke();
 
-  // Colored dots per pillar
-  pts.forEach((p, i) => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
-    ctx.fillStyle = colors[i];
-    ctx.fill();
-    ctx.strokeStyle = '#0e0f14';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-    // score inside
-    ctx.fillStyle = '#0e0f14';
-    ctx.font = 'bold 8px DM Sans';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
+  pts.forEach((p,i) => {
+    ctx.beginPath(); ctx.arc(p.x,p.y,9,0,Math.PI*2);
+    ctx.fillStyle=colors[i]; ctx.fill();
+    ctx.strokeStyle='#0e0f14'; ctx.lineWidth=2; ctx.stroke();
+    ctx.fillStyle='#0e0f14'; ctx.font='bold 8px DM Sans';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
     ctx.fillText(pillarAvgs[i].toFixed(1), p.x, p.y);
   });
 
-  // Labels
-  const labelPad = 28;
+  const labelPad = 30;
   for (let i = 0; i < n; i++) {
-    const a = (Math.PI * 2 * i / n) - Math.PI / 2;
-    const lx = cx + (maxR + labelPad) * Math.cos(a);
-    const ly = cy + (maxR + labelPad) * Math.sin(a);
-    ctx.fillStyle = colors[i];
-    ctx.font = "700 12px 'Bebas Neue', sans-serif";
-    ctx.letterSpacing = '0.08em';
-    ctx.textAlign = lx < cx - 5 ? 'right' : lx > cx + 5 ? 'left' : 'center';
-    ctx.textBaseline = ly < cy - 5 ? 'bottom' : ly > cy + 5 ? 'top' : 'middle';
+    const a = (Math.PI*2*i/n) - Math.PI/2;
+    const lx = cx+(maxR+labelPad)*Math.cos(a), ly = cy+(maxR+labelPad)*Math.sin(a);
+    ctx.fillStyle=colors[i]; ctx.font="700 12px 'Bebas Neue',sans-serif";
+    ctx.textAlign = lx<cx-5?'right':lx>cx+5?'left':'center';
+    ctx.textBaseline = ly<cy-5?'bottom':ly>cy+5?'top':'middle';
     ctx.fillText(labels[i].toUpperCase(), lx, ly);
-    ctx.letterSpacing = '0';
   }
 }
 
 /* ---- Interaction ---- */
 function getCanvasPos(canvas, e) {
   const rect = canvas.getBoundingClientRect();
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
+  const scaleX = canvas.width/rect.width, scaleY = canvas.height/rect.height;
   const clientX = e.touches ? e.touches[0].clientX : e.clientX;
   const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-  return {
-    x: (clientX - rect.left) * scaleX,
-    y: (clientY - rect.top) * scaleY
-  };
+  return { x: (clientX-rect.left)*scaleX, y: (clientY-rect.top)*scaleY };
 }
 
 function scoreFromPos(canvas, pos, axisIndex, n, maxR) {
-  const cx = canvas.width / 2, cy = canvas.height / 2;
-  const angle = (Math.PI * 2 * axisIndex / n) - Math.PI / 2;
-  const axisX = Math.cos(angle), axisY = Math.sin(angle);
-  const dx = pos.x - cx, dy = pos.y - cy;
-  const proj = dx * axisX + dy * axisY;
-  const clamped = Math.max(0, Math.min(maxR, proj));
-  return Math.round((clamped / maxR) * 10 * 2) / 2; // 0.5 steps
+  const cx = canvas.width/2, cy = canvas.height/2;
+  const angle = (Math.PI*2*axisIndex/n) - Math.PI/2;
+  const proj = (pos.x-cx)*Math.cos(angle) + (pos.y-cy)*Math.sin(angle);
+  return Math.max(1, Math.min(MAX, Math.round((Math.max(0,Math.min(maxR,proj))/maxR)*MAX)));
 }
 
 function nearestAxis(canvas, pos, n, maxR) {
-  const cx = canvas.width / 2, cy = canvas.height / 2;
-  let best = -1, bestDist = Infinity;
-  for (let i = 0; i < n; i++) {
-    const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
-    const ax = cx + maxR * Math.cos(angle);
-    const ay = cy + maxR * Math.sin(angle);
-    // distance from point to line segment (cx,cy)-(ax,ay)
-    const dx = pos.x - cx, dy = pos.y - cy;
-    const lx = ax - cx, ly = ay - cy;
-    const t = Math.max(0, Math.min(1, (dx*lx + dy*ly) / (lx*lx + ly*ly)));
-    const px = cx + t*lx - pos.x, py = cy + t*ly - pos.y;
-    const dist = Math.sqrt(px*px + py*py);
-    if (dist < bestDist) { bestDist = dist; best = i; }
+  const cx = canvas.width/2, cy = canvas.height/2;
+  let best=-1, bestDist=Infinity;
+  for (let i=0; i<n; i++) {
+    const angle = (Math.PI*2*i/n) - Math.PI/2;
+    const ax=cx+maxR*Math.cos(angle), ay=cy+maxR*Math.sin(angle);
+    const dx=pos.x-cx, dy=pos.y-cy, lx=ax-cx, ly=ay-cy;
+    const t=Math.max(0,Math.min(1,(dx*lx+dy*ly)/(lx*lx+ly*ly)));
+    const dist=Math.sqrt((cx+t*lx-pos.x)**2+(cy+t*ly-pos.y)**2);
+    if (dist<bestDist) { bestDist=dist; best=i; }
   }
-  return bestDist < 40 ? best : -1;
+  return bestDist<45 ? best : -1;
 }
 
-function setupInteraction(canvas, pillarId, color, labels) {
-  const n = 5;
-  let activeAxis = -1;
-  const maxR = () => Math.min(canvas.width, canvas.height) * 0.35;
+function setupInteraction(canvas, pillarId, color, axes) {
+  const n=5; let activeAxis=-1;
+  const getMaxR = () => Math.min(canvas.width, canvas.height)*0.33;
 
   function update(e) {
-    if (activeAxis === -1) return;
+    if (activeAxis===-1) return;
     e.preventDefault();
-    const pos = getCanvasPos(canvas, e);
-    const s = scoreFromPos(canvas, pos, activeAxis, n, maxR());
-    pillarScores[pillarId][activeAxis] = Math.max(1, s);
-    redraw();
+    pillarScores[pillarId][activeAxis] = scoreFromPos(canvas, getCanvasPos(canvas,e), activeAxis, n, getMaxR());
+    drawRadar(canvas, pillarScores[pillarId], color, axes.map(a=>a.label), getMaxR());
     updateScoreList(pillarId, color);
     refreshOverall();
   }
 
-  function start(e) {
-    const pos = getCanvasPos(canvas, e);
-    activeAxis = nearestAxis(canvas, pos, n, maxR());
-    update(e);
-  }
-
-  function end() { activeAxis = -1; }
-
-  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousedown', e => { activeAxis=nearestAxis(canvas,getCanvasPos(canvas,e),n,getMaxR()); update(e); });
   canvas.addEventListener('mousemove', update);
-  canvas.addEventListener('mouseup', end);
-  canvas.addEventListener('mouseleave', end);
-  canvas.addEventListener('touchstart', start, { passive: false });
-  canvas.addEventListener('touchmove', update, { passive: false });
-  canvas.addEventListener('touchend', end);
+  canvas.addEventListener('mouseup', ()=>{ activeAxis=-1; });
+  canvas.addEventListener('mouseleave', ()=>{ activeAxis=-1; });
+  canvas.addEventListener('touchstart', e=>{ activeAxis=nearestAxis(canvas,getCanvasPos(canvas,e),n,getMaxR()); update(e); }, {passive:false});
+  canvas.addEventListener('touchmove', update, {passive:false});
+  canvas.addEventListener('touchend', ()=>{ activeAxis=-1; });
 
-  function redraw() {
-    drawRadar(canvas, pillarScores[pillarId], color, labels, maxR());
-  }
-
-  redraw();
+  drawRadar(canvas, pillarScores[pillarId], color, axes.map(a=>a.label), getMaxR());
 }
 
-/* ---- Score List ---- */
 function updateScoreList(pillarId, color) {
   const list = document.getElementById(`list-${pillarId}`);
   const scores = pillarScores[pillarId];
-  const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-  document.getElementById(`avg-${pillarId}`).innerHTML = `Average: <span>${avg.toFixed(1)} / 10</span>`;
-
-  scores.forEach((s, i) => {
-    const fill = list.querySelectorAll('.bar-fill')[i];
-    const val = list.querySelectorAll('.val')[i];
-    fill.style.width = (s / 10 * 100) + '%';
-    fill.style.background = color;
-    val.textContent = s;
+  const avg = scores.reduce((a,b)=>a+b,0)/scores.length;
+  document.getElementById(`avg-${pillarId}`).innerHTML = `Average: <span>${avg.toFixed(1)} / ${MAX}</span>`;
+  scores.forEach((s,i) => {
+    const item = list.querySelectorAll('.score-item')[i];
+    item.querySelectorAll('.dot').forEach((d,di) => {
+      if (di<s) { d.style.background=color; d.style.borderColor=color; }
+      else { d.style.background=''; d.style.borderColor=''; }
+    });
+    const val = item.querySelector('.val');
+    val.textContent = s; val.style.color = color;
   });
 }
 
-/* ---- Overall ---- */
 function refreshOverall() {
-  const avgs = PILLARS.map(p => {
-    const s = pillarScores[p.id];
-    return Math.round(s.reduce((a, b) => a + b, 0) / s.length * 10) / 10;
-  });
-  const colors = PILLARS.map(p => p.color);
-  const labels = PILLARS.map(p => p.label);
-  drawOverallRadar(document.getElementById('overallRadar'), avgs, colors, labels);
-
-  const scoreEl = document.getElementById('overallScores');
-  scoreEl.innerHTML = PILLARS.map((p, i) => `
-    <div class="overall-score-item">
-      <div class="name" style="color:${p.color}">${p.label}</div>
-      <div class="num" style="color:${p.color}">${avgs[i].toFixed(1)}</div>
-    </div>
-  `).join('') + `
-    <div class="overall-score-item">
+  const avgs = PILLARS.map(p => Math.round(pillarScores[p.id].reduce((a,b)=>a+b,0)/pillarScores[p.id].length*10)/10);
+  drawOverallRadar(document.getElementById('overallRadar'), avgs, PILLARS.map(p=>p.color), PILLARS.map(p=>p.label));
+  const totalAvg = (avgs.reduce((a,b)=>a+b,0)/avgs.length).toFixed(1);
+  document.getElementById('overallScores').innerHTML =
+    PILLARS.map((p,i)=>`
+      <div class="overall-score-item">
+        <div class="name" style="color:${p.color}">${p.label}</div>
+        <div class="num" style="color:${p.color}">${avgs[i].toFixed(1)}</div>
+      </div>
+    `).join('') +
+    `<div class="overall-score-item" style="border-left:1px solid #252830;padding-left:24px;margin-left:4px">
       <div class="name" style="color:#ff6b6b">TOTAL AVG</div>
-      <div class="num" style="color:#ff6b6b">${(avgs.reduce((a,b)=>a+b,0)/avgs.length).toFixed(1)}</div>
-    </div>
-  `;
+      <div class="num" style="color:#ff6b6b">${totalAvg}</div>
+    </div>`;
 }
 
 /* ---- Build UI ---- */
-const grid = document.getElementById('pillarsGrid');
-
 PILLARS.forEach(p => {
   const card = document.createElement('div');
   card.className = 'pillar-card';
   card.dataset.pillar = p.id;
 
-  const cw = 340, ch = 320;
-
   card.innerHTML = `
     <div class="pillar-label">${p.label}</div>
-    <div class="pillar-avg" id="avg-${p.id}">Average: <span>5.0 / 10</span></div>
-    <canvas id="canvas-${p.id}" class="radar" width="${cw}" height="${ch}" style="max-width:100%"></canvas>
+    <div class="pillar-avg" id="avg-${p.id}">Average: <span>3.0 / ${MAX}</span></div>
+    <canvas id="canvas-${p.id}" class="radar" width="420" height="340"></canvas>
     <div class="scores-list" id="list-${p.id}">
-      ${p.axes.map((a, i) => `
+      ${p.axes.map(a => `
         <div class="score-item">
-          <div class="label" title="${a}">${a}</div>
-          <div class="bar-wrap"><div class="bar-fill" style="width:50%;background:${p.color}"></div></div>
-          <div class="val" style="color:${p.color}">5</div>
+          <div class="label-wrap">
+            <span class="label" title="${a.label}">${a.label}</span>
+            <button class="info-btn" type="button" aria-label="What good looks like for ${a.label}"><i>i</i></button>
+          </div>
+          <div class="dots">
+            ${[1,2,3,4,5].map(d=>`<div class="dot" style="${d<=3?`background:${p.color};border-color:${p.color}`:''}"></div>`).join('')}
+          </div>
+          <div class="val" style="color:${p.color}">3</div>
         </div>
       `).join('')}
     </div>
   `;
 
-  grid.appendChild(card);
+  document.getElementById('pillarsGrid').appendChild(card);
+  setupInteraction(document.getElementById(`canvas-${p.id}`), p.id, p.color, p.axes);
 
-  const canvas = document.getElementById(`canvas-${p.id}`);
-  setupInteraction(canvas, p.id, p.color, p.axes);
+  // Attach click handlers to info buttons
+  const infoButtons = card.querySelectorAll('.info-btn');
+  infoButtons.forEach((btn, i) => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      openTooltip(btn, p.axes[i], p.color);
+    });
+  });
 });
 
 refreshOverall();
